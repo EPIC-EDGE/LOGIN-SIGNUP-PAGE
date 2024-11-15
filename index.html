@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern login and sign-up system with advanced features">
+    <title>Login & Sign-Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">Dark Mode</label>
+    </div>
+
+    <div class="language-selector">
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <div class="container">
+        <div id="loginPage" class="page active">
+            <div class="split left">
+                <h1>Welcome Back!</h1>
+                <p>Access your account to continue earning.</p>
+                <div class="background-slideshow">
+                    <!-- Background images for slideshow -->
+                    <div class="background-image" style="background-image: url('image1.jpg');"></div>
+                    <div class="background-image" style="background-image: url('image2.jpg');"></div>
+                    <div class="background-image" style="background-image: url('image3.jpg');"></div>
+                </div>
+            </div>
+            <div class="split right">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <span class="icon">📧</span>
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me for 30 days</label>
+                </div>
+                <button class="btn" id="loginButton">Login</button>
+                <button class="btn" id="forgotPasswordButton">Forgot Password</button>
+                <div class="social-login">
+                    <button class="social-btn google">Sign in with Google</button>
+                    <button class="social-btn facebook">Sign in with Facebook</button>
+                </div>
+                <p>Don't have an account? <span class="link" onclick="openSignUp()">Sign Up</span></p>
+            </div>
+        </div>
+
+        <div id="signUpPage" class="page">
+            <div class="split left">
+                <h1>Join Us!</h1>
+                <p>Create an account to start earning and exploring new opportunities.</p>
+                <div class="background-slideshow">
+                    <!-- Background images for slideshow -->
+                    <div class="background-image" style="background-image: url('image4.jpg');"></div>
+                    <div class="background-image" style="background-image: url('image5.jpg');"></div>
+                    <div class="background-image" style="background-image: url('image6.jpg');"></div>
+                </div>
+            </div>
+            <div class="split right">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <span class="icon">📧</span>
+                    <input type="email" id="signUpEmail" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="signUpPassword" placeholder="Password" required>
+                </div>
+                <div id="passwordStrength" class="password-strength"></div>
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="signUpConfirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="userRole">Choose Role:</label>
+                    <select id="userRole">
+                        <option value="affiliate">Affiliate</option>
+                        <option value="admin">Admin</option>
+                        <option value="moderator">Moderator</option>
+                    </select>
+                </div>
+                <button class="btn" id="signUpButton">Sign Up</button>
+                <p>Already have an account? <span class="link" onclick="openLogin()">Login</span></p>
+            </div>
+        </div>
+
+        <div id="forgotPasswordPage" class="page">
+            <div class="split left">
+                <h1>Forgot Password?</h1>
+                <p>We’ll send a recovery link to your email.</p>
+            </div>
+            <div class="split right">
+                <h2>Reset Password</h2>
+                <div class="input-group">
+                    <span class="icon">📧</span>
+                    <input type="email" id="recoveryEmail" placeholder="Recovery Email" required>
+                </div>
+                <button class="btn" id="sendRecoveryButton">Send Recovery Email</button>
+                <p>Remember your password? <span class="link" onclick="openLogin()">Login</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
